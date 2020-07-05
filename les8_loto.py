@@ -57,9 +57,6 @@
 import random
 
 class Card:
-    # _card_delete_numb = [[0 for _ in range(5)] for _ in range(3)]
-    # __number_card = [[0 for _ in range(5)] for _ in range(3)]
-
     def __init__(self, name):
         self.namecard = name
         self.card_delete_numb = [[0 for _ in range(5)] for _ in range(3)]
@@ -71,14 +68,11 @@ class Card:
         for numb in range (len(numbers2)-15):
             numbers2.pop(numb)
 
-        # print (Card.__number_card)
         for numb in range(3):
             for numb1 in range(5):
                 self.number_card[numb][numb1] = numbers2[numb*5+numb1]
 
             self.number_card[numb].sort()
-
-        # print (Card.number_card)
 
     def __str__(self):
         self.card = ''
@@ -117,8 +111,7 @@ class Card:
 
 class GamePlay():
     _numb_list = []
-    # def __init__(self):
-    #
+
     def start(self):
         b_quit = True
         while b_quit:
@@ -164,17 +157,10 @@ class GamePlay():
             if GamePlay._numb_list.count(prom) == 0:
                 GamePlay._numb_list.append(prom)
                 b_quit = False
-
         return prom
-
-
-
 
 loto_card_user = Card('user')
 loto_card_computer = Card('computer')
 game = GamePlay()
 
 game.start()
-
-
-
